@@ -1,0 +1,1011 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Ameer Khaled Mubarak — AI Agent Engineer, Gen AI Specialist, and AI Automation Builder." />
+  <title>أمير خالد مبارك | AI Agent Engineer</title>
+  <style>
+    /* =========================
+       Design System
+       ========================= */
+    :root {
+      --bg: #120f0c;
+      --bg-2: #1a1612;
+      --surface: rgba(31, 61, 43, 0.08);
+      --surface-2: rgba(194, 162, 124, 0.08);
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #f4efe7;
+      --muted: rgba(244, 239, 231, 0.72);
+      --accent: #c2a27c;
+      --accent-2: #1f3d2b;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --container: 1180px;
+      --transition: 260ms cubic-bezier(.2,.8,.2,1);
+    }[data-theme="light"] {
+  --bg: #f7f2ea;
+  --bg-2: #efe4d4;
+  --surface: rgba(31, 61, 43, 0.06);
+  --surface-2: rgba(26, 22, 18, 0.06);
+  --line: rgba(26, 22, 18, 0.10);
+  --text: #15110e;
+  --muted: rgba(21, 17, 14, 0.72);
+  --shadow: 0 18px 48px rgba(26, 22, 18, 0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(31,61,43,.35), transparent 55%),
+    radial-gradient(900px 500px at 80% 0%, rgba(194,162,124,.18), transparent 52%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+  opacity: 0.35;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button, input, textarea { font: inherit; }
+
+.container {
+  width: min(100% - 32px, var(--container));
+  margin-inline: auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 76px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(31,61,43,.95), rgba(194,162,124,.78));
+  box-shadow: var(--shadow);
+  color: white;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--text); background: var(--surface); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn,
+.icon-btn {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  color: var(--text);
+  border-radius: 999px;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition);
+  cursor: pointer;
+}
+
+.btn {
+  padding: 12px 18px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover,
+.icon-btn:hover { transform: translateY(-2px); border-color: rgba(194,162,124,.35); }
+
+.btn-primary {
+  background: linear-gradient(135deg, rgba(31,61,43,.95), rgba(194,162,124,.82));
+  color: #fff;
+  border-color: transparent;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+.hero {
+  padding: 56px 0 28px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.hero-main {
+  padding: 36px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  width: fit-content;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(194,162,124,.12);
+}
+
+h1, h2, h3, p { margin: 0; }
+
+.hero-title {
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: .92;
+  letter-spacing: -0.05em;
+  max-width: 10ch;
+}
+
+.hero-title .accent { color: var(--accent); }
+
+.hero-copy {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stat {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.02);
+}
+
+.stat strong {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.stat span { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+.hero-side {
+  display: grid;
+  gap: 22px;
+}
+
+.portrait {
+  min-height: 320px;
+  padding: 18px;
+  display: flex;
+  align-items: end;
+  background:
+    linear-gradient(180deg, rgba(26,22,18,.02), rgba(26,22,18,.72)),
+    radial-gradient(circle at 50% 20%, rgba(194,162,124,.30), transparent 45%),
+    
+('') center/cover no-repeat;
+}
+
+.portrait .portrait-inner {
+  width: 100%;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: rgba(10, 10, 10, .25);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(14px);
+}
+
+.portrait-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.portrait-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.portrait-role {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.info-card {
+  padding: 24px;
+}
+
+.info-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.info-text {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+section {
+  padding: 24px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: clamp(26px, 3vw, 40px);
+  letter-spacing: -.03em;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 60ch;
+  line-height: 1.7;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.about-card,
+.skills-card,
+.contact-card,
+.project-card,
+.service-card {
+  padding: 24px;
+  min-height: 100%;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pill {
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: rgba(255,255,255,.03);
+  font-size: 13px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-media {
+  aspect-ratio: 16 / 11;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(31,61,43,.36), rgba(194,162,124,.18));
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-media::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: auto 14px 14px auto;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.42);
+  color: #fff;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.project-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-desc,
+.service-desc {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.meta {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.meta strong { color: var(--text); }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card h3 { margin-bottom: 10px; }
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-item {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.02);
+}
+
+.timeline-item strong { display: block; margin-bottom: 6px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr .95fr;
+  gap: 18px;
+}
+
+.contact-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.02);
+}
+
+.contact-item span { color: var(--muted); }
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.field:focus { border-color: rgba(194,162,124,.6); }
+
+textarea.field { min-height: 160px; resize: vertical; }
+
+footer {
+  padding: 28px 0 42px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px) scale(.985);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 1024px) {
+  .hero-grid,
+  .grid-2,
+  .contact-grid,
+  .project-grid,
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-main { min-height: unset; }
+  .hero-title { max-width: 12ch; }
+  .nav-links { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding-top: 22px; }
+  .hero-main, .project-card, .about-card, .skills-card, .contact-card, .service-card, .info-card { padding: 18px; }
+  .hero-title { font-size: clamp(34px, 12vw, 54px); }
+  .stats-grid { grid-template-columns: 1fr; }
+  .section-head { flex-direction: column; align-items: start; }
+  .nav { min-height: 70px; }
+  .brand-name { display: none; }
+}
+
+  </style>
+</head>
+<body data-theme="dark">
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Home">
+        <span class="brand-mark">A</span>
+        <span class="brand-name" id="brandName">Ameer</span>
+      </a><nav class="nav-links" aria-label="Primary">
+    <a href="#about" data-nav="about">About</a>
+    <a href="#projects" data-nav="projects">Projects</a>
+    <a href="#services" data-nav="services">Services</a>
+    <a href="#skills" data-nav="skills">Skills</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle dark and light mode">◐</button>
+    <button class="btn" id="langToggle" aria-label="Toggle language">AR / EN</button>
+  </div>
+</div>
+
+  </header>  <!-- Hero -->  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <section class="card hero-main reveal">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="hero.badge">AI Agent Engineer · Gen AI Specialist · n8n Automation</span></div>
+          <h1 class="hero-title" id="heroTitle">
+            <span data-i18n="hero.titleLine1">أمير</span><br />
+            <span class="accent" data-i18n="hero.titleLine2">خالد مبارك</span>
+          </h1>
+          <p class="hero-copy" data-i18n="hero.copy">
+            مهندس وكلاء ذكاء اصطناعي ومحترف في بناء حلول Gen AI وأتمتة الأعمال عبر n8n. أركز على تحويل الأفكار إلى أنظمة عملية، سريعة، وقابلة للتوسع.
+          </p><div class="hero-cta">
+        <a class="btn btn-primary" href="#contact" data-i18n="hero.ctaPrimary">Request a Project</a>
+        <a class="btn" href="#projects" data-i18n="hero.ctaSecondary">View Work</a>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <strong>03</strong>
+        <span data-i18n="hero.stat1">Selected campaigns and AI visuals</span>
+      </div>
+      <div class="stat">
+        <strong>n8n</strong>
+        <span data-i18n="hero.stat2">Agent workflows and automation systems</span>
+      </div>
+      <div class="stat">
+        <strong>AI</strong>
+        <span data-i18n="hero.stat3">Gen AI focused delivery</span>
+      </div>
+    </div>
+  </section>
+
+  <aside class="hero-side">
+    <div class="card portrait reveal" aria-label="Profile portrait area">
+      <div class="portrait-inner">
+        <div class="portrait-label" data-i18n="hero.profileLabel">Profile image</div>
+        <div class="portrait-name" data-i18n="hero.profileName" ></div>
+        <div class="portrait-role" data-i18n="hero.profileRole"></div>
+      </div>
+    </div>
+
+    <div class="card info-card reveal">
+      <h2 class="info-title" data-i18n="hero.summaryTitle">Positioning</h2>
+      <p class="info-text" data-i18n="hero.summaryText">
+        A premium portfolio for AI automation, agent engineering, and creative Gen AI production. Built for hiring, client acquisition, and high-trust freelance work.
+      </p>
+    </div>
+  </aside>
+</div>
+
+  </main>  <!-- About -->  <section id="about">
+    <div class="container grid-2">
+      <div class="card about-card reveal">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" data-i18n="about.title">About</h2>
+            <p class="section-subtitle" data-i18n="about.subtitle">A concise profile that sells capability without clutter.</p>
+          </div>
+        </div>
+        <p class="info-text" data-i18n="about.body">
+          متخصص في بناء وكلاء ذكاء اصطناعي، وربطهم مع أدوات التشغيل عبر n8n، وصناعة حلول Gen AI عملية تخدم التسويق، الأتمتة، والإنتاج السريع للمحتوى. الهوية هنا صممت لتكون فاخرة، مباشرة، وقابلة للاستخدام في التوظيف أو جذب العملاء.
+        </p>
+        <div class="pill-row">
+          <span class="pill">AI Agents</span>
+          <span class="pill">n8n Automation</span>
+          <span class="pill">Gen AI</span>
+          <span class="pill">Prompt Systems</span>
+          <span class="pill">Creative AI</span>
+        </div>
+      </div><div class="card skills-card reveal" id="skills">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" data-i18n="skills.title">Skills</h2>
+        <p class="section-subtitle" data-i18n="skills.subtitle">Core competencies arranged for fast scanning.</p>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong data-i18n="skills.item1Title">AI Agent Architecture</strong>
+        <span class="info-text" data-i18n="skills.item1Body">Designing multi-step agents, memory flows, tool routing, and task orchestration.</span>
+      </div>
+      <div class="timeline-item">
+        <strong data-i18n="skills.item2Title">n8n Automation</strong>
+        <span class="info-text" data-i18n="skills.item2Body">Workflow design, integrations, triggers, webhooks, and scalable automations.</span>
+      </div>
+      <div class="timeline-item">
+        <strong data-i18n="skills.item3Title">Gen AI Production</strong>
+        <span class="info-text" data-i18n="skills.item3Body">Prompting, content generation pipelines, visual campaign ideation, and QA editing.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>  <!-- Projects -->  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2 class="section-title" data-i18n="projects.title">Selected Projects</h2>
+          <p class="section-subtitle" data-i18n="projects.subtitle">Commercial AI visuals and campaign assets with strong art direction.</p>
+        </div>
+      </div><div class="project-grid">
+    <article class="card project-card reveal">
+      <div class="project-media" data-label="Dukhoon UAE">
+        <img data-project-image="1" alt="Dukhoon UAE campaign" src="https://i.postimg.cc/ryWJ3GMB/20260326-155318.jpg " />
+      </div>
+      <h3 class="project-title" data-i18n="project1.title">دخون الإماراتية — حملة عطور</h3>
+      <p class="project-desc" data-i18n="project1.desc">تم تنفيذ عدة إعلانات لعطور دخون مثل دخون عود، تيامو، وPrivate December 2 مع تدقيق كتابي واملائي باستخدام الذكاء الاصطناعي.</p>
+      <div class="meta">
+        <div><strong data-i18n="meta.tech">Tech:</strong> Nano Banana Pro + AI text QA</div>
+        <div><strong data-i18n="meta.role">Role:</strong> Visual ads production</div>
+      </div>
+    </article>
+
+    <article class="card project-card reveal">
+      <div class="project-media" data-label="Centella Serum">
+        <img data-project-image="2" alt="Centella serum campaign" src="https://i.postimg.cc/LXgTHLfD/20260326-155351.jpg " />
+      </div>
+      <h3 class="project-title" data-i18n="project2.title">Centella — إعلان سيروم</h3>
+      <p class="project-desc" data-i18n="project2.desc">تم إنشاء إعلان لسيروم Centella Madagascar الأزرق باستخدام Nano Banana Pro وNano Banana 2 مع تدقيق بصري وكتابي دقيق.</p>
+      <div class="meta">
+        <div><strong data-i18n="meta.tech">Tech:</strong> Nano Banana Pro + Nano Banana 2</div>
+        <div><strong data-i18n="meta.role">Role:</strong> Ad concept + QA</div>
+      </div>
+    </article>
+
+    <article class="card project-card reveal">
+      <div class="project-media" data-label="Freez Mix">
+        <img data-project-image="3" alt="Freez Mix beverages campaign" src="
+https://i.postimg.cc/bYbTW0qD/20260326-155604.jpg" />
+      </div>
+      <h3 class="project-title" data-i18n="project3.title">Freez Mix — مشروبات</h3>
+      <p class="project-desc" data-i18n="project3.desc">إعلانات لمشروبات Freez Mix مثل مكس التوت ومكس الفراولة، مع بناء بصري جذاب وأسلوب تسويقي نظيف.</p>
+      <div class="meta">
+        <div><strong data-i18n="meta.tech">Tech:</strong> Nano Banana Pro + Nano Banana 2</div>
+        <div><strong data-i18n="meta.role">Role:</strong> Campaign visuals</div>
+      </div>
+    </article>
+  </div>
+</div>
+
+  </section>  <!-- Services -->  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2 class="section-title" data-i18n="services.title">Services</h2>
+          <p class="section-subtitle" data-i18n="services.subtitle">Structured to match client intent and hiring intent.</p>
+        </div>
+      </div><div class="service-grid">
+    <div class="card service-card reveal">
+      <h3 data-i18n="services.item1Title">AI Bots / Automation</h3>
+      <p class="service-desc" data-i18n="services.item1Body">Custom workflow systems, AI agents, notifications, search, task automation, and operational pipelines built around n8n.</p>
+    </div>
+    <div class="card service-card reveal">
+      <h3 data-i18n="services.item2Title">Gen AI Production</h3>
+      <p class="service-desc" data-i18n="services.item2Body">Creative AI workflows for ads, campaign visuals, prompt systems, and content generation with quality control.</p>
+    </div>
+    <div class="card service-card reveal">
+      <h3 data-i18n="services.item3Title">Consulting</h3>
+      <p class="service-desc" data-i18n="services.item3Body">System design, workflow planning, automation audits, and implementation guidance for teams or individuals.</p>
+    </div>
+    <div class="card service-card reveal">
+      <h3 data-i18n="services.item4Title">Pricing Model</h3>
+      <p class="service-desc" data-i18n="services.item4Body">Project-based pricing only. The scope is defined by complexity, integrations, and deliverables.</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <!-- Contact -->  <section id="contact">
+    <div class="container contact-grid">
+      <div class="card contact-card reveal">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Built for project requests and hiring conversations.</p>
+          </div>
+        </div><div class="contact-list">
+      <div class="contact-item">
+        <span>Facebook</span>
+        <strong id="facebookLinkText">Insert link</strong>
+      </div>
+      <div class="contact-item">
+        <span>LinkedIn</span>
+        <strong id="linkedinLinkText">Insert link</strong>
+      </div>
+      <div class="contact-item">
+        <span>Email</span>
+        <strong id="emailText">Insert email</strong>
+      </div>
+      <div class="contact-item">
+        <span>Primary CTA</span>
+        <strong data-i18n="contact.cta">Request a service or hire</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="card contact-card reveal">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" data-i18n="contact.formTitle">Message UI</h2>
+        <p class="section-subtitle" data-i18n="contact.formSubtitle">Front-end form with clean interaction states.</p>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="return false;">
+      <input class="field" type="text" data-i18n-placeholder="contact.namePlaceholder" placeholder="Your name" />
+      <input class="field" type="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="Your email" />
+      <textarea class="field" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Project details"></textarea>
+      <button class="btn btn-primary" type="submit" data-i18n="contact.send">Prepare for Integration</button>
+    </form>
+  </div>
+</div>
+
+  </section>  <footer>
+    <div class="container">
+      <p id="footerText">© 2026 Ameer Khaled Mubarak. Designed for AI automation, Gen AI, and premium portfolio presentation.</p>
+    </div>
+  </footer>  <script>
+    // =========================
+    // Editable placeholders
+    // =========================
+    const profileImageUrl = "https://i.postimg.cc/9QHBcDFR/In-Shot-20260326-184431696.png "; // Insert Google Drive / Imgur image URL here
+    const projectImages = {
+      1: "https://i.ibb.co/996SyjxR/20260326-155318.jpg", // Dukhoon UAE 
+      2: "https://i.ibb.co/nNWHxwJF/20260326-155351.jpg", // Centella image
+      3: "https://i.ibb.co/RpvwRdSB/20260326-155604.jpg"  // Freez Mix image
+    };
+
+    const contactLinks = {
+      facebook: "#",
+      linkedin: "#",
+      email: "#"
+    };
+
+    // =========================
+    // Content dictionaries
+    // =========================
+    const i18n = {
+      ar: {
+        "hero.badge": "مهندس وكلاء ذكاء اصطناعي · متخصص Gen AI · أتمتة n8n",
+        "hero.titleLine1": "أمير",
+        "hero.titleLine2": "خالد مبارك",
+        "hero.copy": "مهندس وكلاء ذكاء اصطناعي ومحترف في بناء حلول Gen AI وأتمتة الأعمال عبر n8n. أركز على تحويل الأفكار إلى أنظمة عملية، سريعة، وقابلة للتوسع.",
+        "hero.ctaPrimary": "طلب خدمة",
+        "hero.ctaSecondary": "عرض الأعمال",
+        "hero.stat1": "حملات مختارة ومرئيات AI",
+        "hero.stat2": "أتمتة ووكلاء n8n",
+        "hero.stat3": "تنفيذ Gen AI",
+        "hero.profileLabel": "الصورة الشخصية",
+        "hero.profileName": "امير مبارك",
+        "hero.profileRole": "",
+        "hero.summaryTitle": "الموضع",
+        "hero.summaryText": "بورتفوليو فاخر لبناء وكلاء ذكاء اصطناعي، أتمتة الأعمال، وإنتاج Gen AI. مناسب للتوظيف، جذب العملاء، والعمل الحر.",
+        "about.title": "نبذة",
+        "about.subtitle": "نبذه عني.",
+        "about.body": "متخصص في بناء وكلاء ذكاء اصطناعي، وربطهم مع أدوات التشغيل عبر n8n، وصناعة حلول Gen AI عملية تخدم التسويق، الأتمتة، والإنتاج السريع للمحتوى. الهوية هنا صممت لتكون فاخرة، مباشرة، وقابلة للاستخدام في التوظيف أو جذب العملاء.",
+        "skills.title": "المهارات",
+        "skills.subtitle": "بعض القدرات والمهارات",
+        "skills.item1Title": "معمارية وكلاء الذكاء الاصطناعي",
+        "skills.item1Body": "تصميم وكلاء متعدد الخطوات، الذاكرة، توجيه الأدوات، وأتمتة المهام.",
+        "skills.item2Title": "أتمتة n8n",
+        "skills.item2Body": "تصميم workflows، وربط الأدوات، والمحفزات، والـ webhooks، والأتمتة القابلة للتوسع.",
+        "skills.item3Title": "إنتاج Gen AI",
+        "skills.item3Body": "Prompting، خطوط إنتاج المحتوى، أفكار الحملات المرئية، وضبط الجودة.",
+        "projects.title": "مشاريع مختارة",
+        "projects.subtitle": "مرئيات إعلانية مدعومة بالذكاء الاصطناعي مع توجيه بصري واضح.",
+        "project1.title": "دخون الإماراتية — حملة عطور",
+        "project1.desc": "تم تنفيذ عدة إعلانات لعطور دخون مثل دخون عود، تيامو، وPrivate December 2 مع تدقيق كتابي واملائي باستخدام الذكاء الاصطناعي.",
+        "project2.title": "Centella — إعلان سيروم",
+        "project2.desc": "تم إنشاء إعلان لسيروم Centella Madagascar الأزرق باستخدام Nano Banana Pro وNano Banana 2 مع تدقيق بصري وكتابي دقيق.",
+        "project3.title": "Freez Mix — مشروبات",
+        "project3.desc": "إعلانات لمشروبات Freez Mix مثل مكس التوت ومكس الفراولة، مع بناء بصري جذاب وأسلوب تسويقي نظيف.",
+        "meta.tech": "التقنية:",
+        "meta.role": "الدور:",
+        "services.title": "الخدمات",
+        "services.subtitle": "مبنية بما يناسب طلب العميل أو جهة التوظيف.",
+        "services.item1Title": "AI Bots / Automation",
+        "services.item1Body": "أنظمة workflows مخصصة، وكلاء ذكاء اصطناعي، إشعارات، بحث، أتمتة مهام، وخطوط تشغيل مبنية حول n8n.",
+        "services.item2Title": "إنتاج Gen AI",
+        "services.item2Body": "خطوط عمل إبداعية للإعلانات، المرئيات التسويقية، أنظمة prompt، وتوليد محتوى مع ضبط جودة.",
+        "services.item3Title": "استشارات",
+        "services.item3Body": "تصميم الأنظمة، تخطيط workflows، مراجعة الأتمتة، وإرشاد التنفيذ للأفراد أو الفرق.",
+        "services.item4Title": "نموذج التسعير",
+        "services.item4Body": "التسعير حسب المشروع فقط. يعتمد على التعقيد، التكاملات، والمخرجات.",
+        "contact.title": "التواصل",
+        "contact.subtitle": "مصمم لطلبات الخدمات والتوظيف.",
+        "contact.cta": "طلب خدمة أو توظيف",
+        "contact.formTitle": "تواصل",
+        "contact.formSubtitle": "تواصل مع امير.",
+        "contact.namePlaceholder": "اسمك",
+        "contact.emailPlaceholder": "بريدك الإلكتروني",
+        "contact.messagePlaceholder": "تفاصيل المشروع",
+        "contact.send": "جهّز للتكامل",
+        "footer": "© 2026 أمير خالد مبارك. تصميم مخصص لـ AI automation وGen AI وبورتفوليو فاخر."
+      },
+      en: {
+        "hero.badge": "AI Agent Engineer · Gen AI Specialist · n8n Automation",
+        "hero.titleLine1": "Ameer",
+        "hero.titleLine2": "Khaled Mubarak",
+        "hero.copy": "AI agent engineer and Gen AI specialist focused on building practical automation systems with n8n. The goal is to turn concepts into scalable, operational products.",
+        "hero.ctaPrimary": "Request a Project",
+        "hero.ctaSecondary": "View Work",
+        "hero.stat1": "Selected campaigns and AI visuals",
+        "hero.stat2": "n8n workflows and agent systems",
+        "hero.stat3": "Gen AI delivery",
+        "hero.profileLabel": "Profile image",
+        "hero.profileName": "",
+        "hero.profileRole": "",
+        "hero.summaryTitle": "Positioning",
+        "hero.summaryText": "A premium portfolio for AI automation, agent engineering, and creative Gen AI production. Built for hiring, client acquisition, and high-trust freelance work.",
+        "about.title": "About",
+        "about.subtitle": "",
+        "about.body": "Specialized in building AI agents, connecting them to operational tools through n8n, and producing practical Gen AI solutions for marketing, automation, and fast content production. The identity is designed to feel premium, direct, and suitable for both recruitment and client acquisition.",
+        "skills.title": "Skills",
+        "skills.subtitle": "Some of my skills.",
+        "skills.item1Title": "AI Agent Architecture",
+        "skills.item1Body": "Designing multi-step agents, memory flows, tool routing, and task orchestration.",
+        "skills.item2Title": "n8n Automation",
+        "skills.item2Body": "Workflow design, integrations, triggers, webhooks, and scalable automations.",
+        "skills.item3Title": "Gen AI Production",
+        "skills.item3Body": "Prompting, content generation pipelines, visual campaign ideation, and QA editing.",
+        "projects.title": "Selected Projects",
+        "projects.subtitle": "Commercial AI visuals and campaign assets with strong art direction.",
+        "project1.title": "Dukhoon UAE — Perfume Campaign",
+        "project1.desc": "Multiple ads were produced for Dukhoon perfumes such as Dukhoon Oud, Tiamo, and Private December 2 with AI-assisted spelling and text QA.",
+        "project2.title": "Centella — Serum Ad",
+        "project2.desc": "A blue Centella Madagascar serum ad was created using Nano Banana Pro and Nano Banana 2 with precise visual and text QA.",
+        "project3.title": "Freez Mix — Beverages",
+        "project3.desc": "Ads for Freez Mix drinks such as Berry Mix and Strawberry Mix, designed with a clean marketing style and strong visual appeal.",
+        "meta.tech": "Tech:",
+        "meta.role": "Role:",
+        "services.title": "Services",
+        "services.subtitle": "Structured to match client intent and hiring intent.",
+        "services.item1Title": "AI Bots / Automation",
+        "services.item1Body": "Custom workflow systems, AI agents, notifications, search, task automation, and operational pipelines built around n8n.",
+        "services.item2Title": "Gen AI Production",
+        "services.item2Body": "Creative AI workflows for ads, campaign visuals, prompt systems, and content generation with quality control.",
+        "services.item3Title": "Consulting",
+        "services.item3Body": "System design, workflow planning, automation audits, and implementation guidance for teams or individuals.",
+        "services.item4Title": "Pricing Model",
+        "services.item4Body": "Project-based pricing only. The scope is defined by complexity, integrations, and deliverables.",
+        "contact.title": "Contact",
+        "contact.subtitle": "Built for project requests and hiring conversations.",
+        "contact.cta": "Request a service or hire",
+        "contact.formTitle": "Contact",
+        "contact.formSubtitle": "Contact with Ameer.",
+        "contact.namePlaceholder": "Your name",
+        "contact.emailPlaceholder": "Your email",
+        "contact.messagePlaceholder": "Project details",
+        "contact.send": "Prepare for Integration",
+        "footer": "© 2026 Ameer Khaled Mubarak. Designed for AI automation, Gen AI, and premium portfolio presentation."
+      }
+    };
+
+    // =========================
+    // Helpers
+    // =========================
+    const html = document.documentElement;
+    const body = document.body;
+    const langToggle = document.getElementById('langToggle');
+    const themeToggle = document.getElementById('themeToggle');
+
+    function applyLanguage(lang) {
+      html.lang = lang === 'ar' ? 'ar' : 'en';
+      html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      body.setAttribute('data-lang', lang);
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18n[lang][key]) el.textContent = i18n[lang][key];
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
+      });
+
+      document.getElementById('footerText').textContent = i18n[lang]['footer'];
+      document.title = lang === 'ar' ? 'أمير خالد مبارك | مهندس وكلاء ذكاء اصطناعي' : 'Ameer Khaled Mubarak | AI Agent Engineer';
+
+      localStorage.setItem('portfolio-lang', lang);
+    }
+
+    function applyTheme(theme) {
+      body.setAttribute('data-theme', theme);
+      localStorage.setItem('portfolio-theme', theme);
+    }
+
+    // Restore saved preferences
+    const savedLang = localStorage.getItem('portfolio-lang') || 'ar';
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    applyLanguage(savedLang);
+    applyTheme(savedTheme);
+
+    langToggle.addEventListener('click', () => {
+      const next = (html.lang === 'ar') ? 'en' : 'ar';
+      applyLanguage(next);
+    });
+
+    themeToggle.addEventListener('click', () => {
+      const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+
+    // Profile image integration
+    const portrait = document.querySelector('.portrait');
+    if (profileImageUrl) {
+      portrait.style.backgroundImage = `linear-gradient(180deg, rgba(26,22,18,.02), rgba(26,22,18,.72)), url('${profileImageUrl}')`;
+      portrait.style.backgroundSize = 'cover';
+      portrait.style.backgroundPosition = 'top-center';
+    }
+
+    // Project images integration
+document.querySelectorAll("img[data-project]").forEach(img => {
+  const id = img.getAttribute("data-project");
+  if (projectImages[id]) {
+    img.src = projectImages[id];
+  }
+});
+
+    // Contact links integration
+    document.getElementById('facebookLinkText').textContent = contactLinks.facebook === '#' ? 'Insert link' : contactLinks.facebook;
+    document.getElementById('linkedinLinkText').textContent = contactLinks.linkedin === '#' ? 'Insert link' : contactLinks.linkedin;
+    document.getElementById('emailText').textContent = contactLinks.email === '#' ? 'ameer.mubarak1235@gmail.com' : contactLinks.email;
+
+    // =========================
+    // Scroll reveal animations
+    // =========================
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Smooth parallax hero glow
+    window.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 18;
+      const y = (e.clientY / window.innerHeight - 0.5) * 18;
+      document.documentElement.style.setProperty('--parallax-x', `${x}px`);
+      document.documentElement.style.setProperty('--parallax-y', `${y}px`);
+    }, { passive: true });
+  </script></body>
+</html>
